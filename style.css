@@ -1,0 +1,242 @@
+:root {
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #1f1f1f;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #aaaaaa;
+  --color-accent-blue: #4a90e2;
+  --color-card-bg: #1f1f1f;
+  --color-card-bg-active: #292929;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --border-radius-xl: 20px;
+  --border-radius-lg: 12px;
+}
+
+.light-mode {
+  --color-bg-primary: #f0f0f0;
+  --color-bg-secondary: #ffffff;
+  --color-text-primary: #121212;
+  --color-text-secondary: #555;
+  --color-card-bg: #ffffff;
+  --color-card-bg-active: #e0e0e0;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  transition: 0.3s;
+  min-height: 100vh;
+}
+
+/* ICON SIZE FIX */
+.icon i,
+.icon-small i {
+  font-size: 2rem;
+}
+
+.temp-icon i {
+  font-size: 3.2rem;
+}
+
+/* Dashboard layout */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-icon-btn {
+  background: var(--color-card-bg);
+  color: var(--color-text-primary);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 5px var(--color-shadow);
+}
+
+.search-container {
+  flex-grow: 1;
+  max-width: 400px;
+  display: flex;
+  background: var(--color-card-bg);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+#city-search {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: 10px;
+}
+
+.search-btn {
+  background: var(--color-accent-blue);
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  color: white;
+}
+
+/* Main layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tabs */
+.forecast-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  background: var(--color-card-bg);
+  color: var(--color-text-secondary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+}
+
+.tab-btn.active {
+  background: var(--color-card-bg-active);
+  color: white;
+}
+
+/* Primary weather card */
+.weather-cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-card {
+  width: 300px;
+  background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+  padding: 20px;
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 8px 16px var(--color-shadow);
+}
+
+.primary-card h3 {
+  font-size: 1.5rem;
+}
+
+.temp {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+/* Daily small cards */
+.daily-cards-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.daily-card {
+  width: 100px;
+  padding: 15px;
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+}
+
+.daily-card:hover {
+  background: var(--color-card-bg-active);
+  transform: translateY(-3px);
+}
+
+/* Map */
+.global-map-area {
+  background: var(--color-card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius-xl);
+  position: relative;
+}
+
+.map-placeholder {
+  height: 300px;
+  background: #181818;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right panel */
+.info-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.info-tab-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--color-card-bg-active);
+  border: none;
+}
+
+.info-tab-btn.active {
+  background: var(--color-accent-blue);
+  color: white;
+}
+
+.chart-container {
+  background: var(--color-card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius-xl);
+  margin-bottom: 20px;
+}
+
+/* Bars */
+.bar {
+  background: var(--color-accent-blue);
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+}
+
+/* Other cities */
+.other-cities-container {
+  background: var(--color-card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius-xl);
+}
+
+.city-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-card-bg-active);
+}
